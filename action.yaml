@@ -12,7 +12,7 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - env:
+    env:
       COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ inputs.token }}"}}'
       COMPOSER_HOME: /tmp/.satis-build
     run: |
@@ -31,7 +31,7 @@ runs:
 
     shell:
       bash
-  - run: |
+  run: |
     rm -rf $COMPOSER_HOME
     shell: bash
 
